@@ -55,7 +55,10 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end gap-4">
-        <button className="btn btn-outline btn-secondary">Appointment</button>
+        {
+          user?.email? <Link to='/checkouts'  className="btn btn-outline btn-secondary">Appoinment Details</Link>:
+          <Link to='/login' className="btn btn-outline btn-secondary">Book Appoinment</Link>
+        }
         {
           user?.email ? 
         <button className="btn btn-outline btn-primary" onClick={handleLogOut}><Link>Log Out</Link></button>

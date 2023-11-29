@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <div className="max-w-7xl mx-auto">
     <React.StrictMode>
       <AuthProvider router={router}>
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
       </AuthProvider>
     </React.StrictMode>
     ,
