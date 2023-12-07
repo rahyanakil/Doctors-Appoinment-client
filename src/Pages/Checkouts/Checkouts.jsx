@@ -11,13 +11,17 @@ const Checkouts = () => {
 
   const url = `http://localhost:5000/checkout?email=${user.email}`;
   useEffect(() => {
-    fetch(url)
+    fetch(url,{
+      method:'GET',
+      headers:{
+        authorization:`Bearer ${localStorage.getItem('Doctors-access-token')}`
+      }
+    })
       .then((res) => res.json())
       .then((data) => setCheckouts(data));
   }, [url]);
 
   //event handler for delete option(state jeikhane event handler sei khane to show the state shange after deletation)
-
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -51,7 +55,7 @@ const Checkouts = () => {
       }
     });
   };
-
+  //handaling checkout confirm by filtering data by id
   const handleCheckoutConfirm = (id) => {
     fetch(`http://localhost:5000/checkout/${id}`, {
       method: "PATCH",

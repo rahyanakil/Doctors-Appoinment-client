@@ -19,6 +19,7 @@ const SignUp = () => {
     .then(result =>{
         const user =result.user;
         console.log(user)
+        alert('Sign Up Successfully Done');
     })
     .then(error=>{
         console.log("Error",error);
