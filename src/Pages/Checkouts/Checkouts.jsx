@@ -4,10 +4,12 @@ import { useEffect } from "react";
 import { useState } from "react";
 import CheckoutsRow from "./CheckoutsRow";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Checkouts = () => {
   const { user } = useContext(AuthContext);
   const [checkouts, setCheckouts] = useState([]);
+  const navigate =useNavigate();
 
   const url = `http://localhost:5000/checkout?email=${user.email}`;
   useEffect(() => {
@@ -18,8 +20,19 @@ const Checkouts = () => {
       }
     })
       .then((res) => res.json())
-      .then((data) => setCheckouts(data));
-  }, [url]);
+      .then((data) => {
+        if(!data.error){
+          setCheckouts(data)
+        }
+        else{
+          //logout and then navigate
+          navigate('/');
+        }
+      }
+      
+      
+
+  )}, [url,navigate]);
 
   //event handler for delete option(state jeikhane event handler sei khane to show the state shange after deletation)
   const handleDelete = (id) => {
