@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import img from "../../assets/images/login/login.svg";
+import img from "../../assets/images/login/login4.png";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const SignUp = () => {
@@ -18,8 +19,8 @@ const SignUp = () => {
     createUser(email,password)
     .then(result =>{
         const user =result.user;
-        console.log(user)
-        alert('Sign Up Successfully Done');
+        console.log(user);
+        alert('Sign Up Success.Please Login!');
     })
     .then(error=>{
         console.log("Error",error);
@@ -30,13 +31,13 @@ const SignUp = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row ">
-        <div className="mr-12 w-1/2">
-          <img src={img} />
+        <div className="mr-10 shadow w-1/2 ">
+          <img className="border rounded bg-opacity-25" src={img} />
         </div>
 
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card shrink-0 w-full max-w-sm shadow-2xl ">
           <div className="card-body">
-            <h1 className="text-5xl font-bold text-center">Sign Up</h1>
+            <h1 className="text-3xl font-bold text-center">Sign Up</h1>
             <form onSubmit={handleSignUp} noValidate='' action="">
               <div className="form-control">
                 <label className="label">
@@ -80,16 +81,17 @@ const SignUp = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <input type="submit" className="btn btn-primary" value="Sign Up" />
+                <input type="submit" className="btn bg-green-600 text-white"  value="Sign Up" />
                 {/* <button className="btn btn-primary" type="submit">Sign Up</button> */}
               </div>
             </form>
             <p className="my-4 text-center">
               Already Have an Account? 
-              <Link className="font-bold text-orange-600" to="/login">
+              <Link className="font-bold text-green-600" to="/login">
                  Login
               </Link>
             </p>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

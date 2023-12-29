@@ -64,7 +64,8 @@ const CheckOut = () => {
 
   return (
     <div>
-      <h2 className="font-bold text-3xl text-center">Book Service : {title}</h2>
+    <h2 className="font-bold text-2xl text-center">Book Your Appoinment</h2>
+      <h2 className="font-semibold text-xl text-center">Appoinment Name : {title}</h2>
 
       <form onSubmit={handleCheckOut} className="card-body">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -120,7 +121,7 @@ const CheckOut = () => {
         </div>
         <div className="form-control mt-6">
           <input
-            className="btn btn-primary btn-block"
+            className="btn bg-green-700 text-white btn-block"
             type="submit"
             value="Order Confirm"></input>
         </div>

@@ -6,6 +6,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import CheckOut from "../Pages/CheckOut/CheckOut";
 import Checkouts from "../Pages/Checkouts/Checkouts";
 import PrivatesRoute from "./PrivatesRoute";
+import Doctors from "../Pages/Doctors/Doctors";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         ,{
           path:'checkouts',
           element:<PrivatesRoute><Checkouts></Checkouts></PrivatesRoute>
+        },
+        {
+          path:'doctors',
+          element:<Doctors></Doctors>
         }
       ]
     },

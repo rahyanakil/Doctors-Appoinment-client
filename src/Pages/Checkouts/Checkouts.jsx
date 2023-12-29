@@ -34,7 +34,7 @@ const Checkouts = () => {
 
   )}, [url,navigate]);
 
-  //event handler for delete option(state jeikhane event handler sei khane to show the state shange after deletation)
+  //event handler for delete option(state jeikhane event handler sei khane to show the state change after deletation)
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -95,9 +95,9 @@ const Checkouts = () => {
 
   return (
     <div>
-      <h2 className="text-4xl font-bold text-center p-6">
+      <h2 className="text-3xl font-semibold underline underline-offset-8 hover:underline-offset-4 text-center p-6">
         {" "}
-        Your Booking: {checkouts.length}
+        Your Booking Count: {checkouts.length}
       </h2>
       <div className="overflow-x-auto">
         <table className="table">
